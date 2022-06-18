@@ -1,0 +1,13 @@
+{
+  "name": "@study/style",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp",
+		"test": "node ./scripts/shared.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,25 @@
+{
+	"include": ["packages/*/src"],
+	"exclude": [
+		"esm",
+		"cjs",
+		"lib",
+		"scripts",
+		"node_modules"
+	],
+  "compilerOptions": {
+    "target": "es2016",                              
+    "lib": ["esnext", "DOM"],                                  
+    "jsx": "react",                             
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,                                  
+    "skipLibCheck": true,
+		"baseUrl": "./",
+    "paths": {
+			"@study/*": ["./packages/*/src"]
+		}            
+  }
+}
