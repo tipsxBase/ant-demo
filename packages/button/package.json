@@ -1,22 +1,31 @@
 {
-  "name": "@study/button",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "classnames": "^2.3.1"
-  },
-  "devDependencies": {
-    "@types/react": "^18.0.11",
-    "react": "^18.1.0"
-  },
-  "peerDependencies": {
-    "react": "^18.1.0"
-  }
+	"name": "@study/button",
+	"version": "1.0.0",
+	"umdName": "StudyButton",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"build": "gulp"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@ant-design/icons": "^4.7.0",
+		"@babel/runtime": "^7.18.3",
+		"@study/style": "workspace:^1.0.0",
+		"@study/util": "workspace:^1.0.0",
+		"classnames": "^2.3.1",
+		"rc-motion": "^2.6.0",
+		"tslib": "^2.4.0"
+	},
+	"devDependencies": {
+		"@types/react": "^18.0.11",
+		"react": "^18.1.0",
+		"react-dom": "^18.1.0"
+	},
+	"peerDependencies": {
+		"react": "^18.1.0",
+		"react-dom": "^18.1.0"
+	}
 }

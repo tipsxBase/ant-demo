@@ -7,14 +7,15 @@
 		"node_modules"
 	],
   "compilerOptions": {
-    "target": "es2016",                              
-    "lib": ["esnext", "DOM"],                                  
-    "jsx": "react",                             
+    "target": "ES2015",
+    "lib": ["DOM", "ESNext"],
     "module": "ESNext",
-    "moduleResolution": "node",
+    "moduleResolution": "Node",
+    "jsx": "react",
+    "resolveJsonModule": true,
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,                                  
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "importHelpers": false,
+    "downlevelIteration": true
   }
 }

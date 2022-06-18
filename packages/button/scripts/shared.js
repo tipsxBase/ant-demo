@@ -1,5 +1,8 @@
-const path = require("path");
 const fs = require("fs-extra");
+const path = require("path");
+const { cwd } = require("process");
+
+let innerPackageJson = null;
 
 function CWD() {
 	return process.cwd();
@@ -8,6 +11,7 @@ function CWD() {
 function getBabelConfig() {
 	return {
 		babelHelpers: "runtime",
+		extensions: [".ts", ".tsx"],
 		presets: [
 			["@babel/preset-react"],
 			[
@@ -25,7 +29,7 @@ function getBabelConfig() {
 				},
 			],
 		],
-		plugins: [["@babel/plugin-transform-runtime", { corejs: 3 }]],
+		plugins: [["@babel/plugin-transform-runtime"]],
 	};
 }
 
@@ -67,21 +71,20 @@ function getTsConfig(
 	return subConfig;
 }
 
-let innerPackageJson = null;
-
-async function getPackageJson() {
+function getPackageJson() {
 	if (innerPackageJson) {
 		return innerPackageJson;
 	}
-	const packageBuffer = await fs.readFile(path.join(CWD(), "package.json"));
-	const packageJson = packageBuffer.toString("utf-8");
-	innerPackageJson = JSON.parse(packageJson);
+	const packageJsonPath = path.resolve(cwd(), "package.json");
+	if (fs.pathExistsSync(packageJsonPath)) {
+		innerPackageJson = fs.readJSONSync(packageJsonPath);
+	}
 	return innerPackageJson;
 }
 
 module.exports = {
+	getPackageJson,
 	CWD,
 	getBabelConfig,
 	getTsConfig,
-	getPackageJson,
 };

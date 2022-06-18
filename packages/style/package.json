@@ -1,13 +1,15 @@
 {
-  "name": "@study/style",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "build": "gulp",
+	"name": "@study/style",
+	"version": "1.0.0",
+	"description": "",
+	"main": "cjs/index.js",
+	"module": "es/index.js",
+	"typings": "lib/index.d.ts",
+	"scripts": {
+		"build": "gulp",
 		"test": "node ./scripts/shared.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC"
 }
